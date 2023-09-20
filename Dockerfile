@@ -1,4 +1,3 @@
-LABEL org.opencontainers.image.description Redis with RediSearch and RedisJSON for arm64 and amd64
 ARG REDIS_VER=7.2.1
 #ARG ARCH=arm64v8
 #ARG ARCH=x64
@@ -32,6 +31,7 @@ RUN cargo build --release
 
 # Run Redis with RediSearch + RedisJSON
 FROM redis:${REDIS_VER}-${OSNICK}
+LABEL org.opencontainers.image.description Redis with RediSearch and RedisJSON for arm64 and amd64
 ARG REDIS_VER
 #ARG ARCH
 ARG OSNICK
