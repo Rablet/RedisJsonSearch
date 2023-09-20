@@ -4,7 +4,7 @@ ARG REDIS_VER=7.2.1
 ARG OSNICK=bookworm
 ARG REDISEARCH_VER=v2.8.4
 ARG RUST_VER=1.72.0
-ARG REJSON_VER=2.6
+ARG REJSON_VER=v2.6.6
 
 # Build RediSearch
 FROM debian:bullseye-slim AS redisearch
