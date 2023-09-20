@@ -2,9 +2,12 @@
 
 Docker image with Redis + RedisJSON + RediSearch.
 
+The pre-built packages support amd64 and arm64 (but it should be trivial to add more platforms as needed): https://github.com/Rablet/RedisJsonSearch/pkgs/container/redisjsonsearch
+
 build with: docker build -t <tag name here> .
 
-Run in Kubernetes like this:
+Run in Kubernetes like this: 
+
 (you can skip configmaps, pvc, secrets if you don't need any configs or persistent storage)
 ```
 apiVersion: v1
