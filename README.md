@@ -2,6 +2,14 @@
 
 Docker image with Redis + RedisJSON + RediSearch.
 
+## Current Versions
+* Redis: 7.2.1
+* RedisJSON: 2.6.6
+* RediSearch: 2.8.4
+* OS: Bookworm
+
+## Instructions
+
 The pre-built packages support amd64 and arm64 (but it should be trivial to add more platforms as needed): https://github.com/Rablet/RedisJsonSearch/pkgs/container/redisjsonsearch
 
 build with: docker build -t <tag name here> .
