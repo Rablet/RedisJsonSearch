@@ -1,3 +1,4 @@
+LABEL org.opencontainers.image.description Redis with RediSearch and RedisJSON for arm64 and amd64
 ARG REDIS_VER=7.2.1
 #ARG ARCH=arm64v8
 #ARG ARCH=x64
