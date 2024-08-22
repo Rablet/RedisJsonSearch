@@ -39,10 +39,21 @@ ARG REDISEARCH_VER
 ARG RUST_VER
 ARG REJSON_VER
 
+ARG USER=redisuser
+
+# Run as non-root
+RUN adduser --disabled-password "$USER" --uid 12345
+# Create app directory
+WORKDIR /home/$USER
+
 ENV LD_LIBRARY_PATH /usr/lib/redis/modules
 WORKDIR /data
 COPY --from=redisearch /RediSearch/bin/redisearch.so /usr/lib/redis/modules/
 COPY --from=rejson /RedisJSON/target/release/librejson.so /usr/lib/redis/modules/
+
+RUN chown -R "$USER":"$USER" /usr/lib/redis/modules/ && chown -R "$USER":"$USER" /data/
+
+USER 12345
 ENTRYPOINT ["redis-server"]
 CMD ["--loadmodule", "/usr/lib/redis/modules/redisearch.so", \
     "--loadmodule", "/usr/lib/redis/modules/librejson.so"]
